@@ -114,7 +114,6 @@ public class Post implements Serializable {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-
     public List<Comment> getComments() {
         return comments;
     }
