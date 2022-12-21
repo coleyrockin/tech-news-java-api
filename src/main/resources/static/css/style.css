@@ -14,7 +14,7 @@ body, html {
 
 a {
   text-decoration: none;
-  color: 5ca0ec;
+  color: #5ca0ec;
   font-weight: bold;
   transition: color .1s;
 }
