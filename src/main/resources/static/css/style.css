@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   background-color: #293132;
+  text-color:white;
 }
 
 body, html {
@@ -8,7 +9,7 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #293132;
+  color: #50D8D7;
 }
 
 a {
@@ -23,7 +24,7 @@ a:hover {
 }
 
 button {
-  background-color: #474044;
+  background-color: #547AA5;
   border: 0;
   padding: 1%;
   color: white;
