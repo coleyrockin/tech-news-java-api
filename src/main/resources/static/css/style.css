@@ -24,6 +24,9 @@ a:hover {
 }
 
 button {
+  display: flex;
+  margin-bottom: 2%;
+  align-items: center;
   background-color: #547AA5;
   border: 0;
   padding: 1%;
