@@ -47,6 +47,7 @@ button:hover {
 }
 
 textarea, input {
+  color: white;
   padding: .5%;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -119,6 +120,9 @@ main {
 }
 
 .delete-post-btn {
+  display: flex;
+  margin-bottom: 2%;
+  align-items: center;
   background-color: #d41414;
 }
 
