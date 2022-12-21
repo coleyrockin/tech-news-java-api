@@ -16,15 +16,15 @@
 
   <form action="#" th:action="@{/users/login}" th:object="${user}" method="post" class="login-form">
     <div>
-      <label>email:</label>
+      <label>Email:</label>
       <input type="text" th:field="*{email}"/>
     </div>
     <div>
-      <label>password:</label>
+      <label>Password:</label>
       <input type="password" th:field="*{password}"/>
     </div>
     <div>
-      <button type="submit">login</button>
+      <button type="submit">Login</button>
     </div>
   </form>
 
@@ -32,19 +32,19 @@
 
   <form action="#" th:action="@{/users}" th:object="${user}" method="post" class="signup-form">
     <div>
-      <label>username:</label>
+      <label>Username:</label>
       <input type="text" th:field="*{username}"/>
     </div>
     <div>
-      <label>email:</label>
+      <label>Email:</label>
       <input type="text" th:field="*{email}"/>
     </div>
     <div>
-      <label>password:</label>
+      <label>Password:</label>
       <input type="password" th:field="*{password}"/>
     </div>
     <div>
-      <button type="submit">signup</button>
+      <button type="submit">Signup</button>
     </div>
   </form>
 </div>
