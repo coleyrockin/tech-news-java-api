@@ -58,9 +58,10 @@ textarea {
 }
 
 form > div {
-  display:flex;
-  justify-content: center;
-  margin-bottom: 2%;
+      display: flex;
+      margin-bottom: 2%;
+      flex-direction: column;
+      align-items: center;
 }
 
 form label {
