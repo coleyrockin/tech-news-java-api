@@ -9,12 +9,12 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #50D8D7;
+  color: #dcd3e4;
 }
 
 a {
   text-decoration: none;
-  color: #547AA5;
+  color: 5ca0ec;
   font-weight: bold;
   transition: color .1s;
 }
@@ -88,7 +88,8 @@ header {
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 2em;
+  font-family: sans-serif;
 }
 
 main {
