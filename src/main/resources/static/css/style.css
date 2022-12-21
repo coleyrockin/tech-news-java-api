@@ -7,22 +7,22 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: #293132;
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #547AA5;
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: #50D8D7;
 }
 
 button {
-  background-color: #000000;
+  background-color: #474044;
   border: 0;
   padding: 1%;
   color: white;
@@ -33,7 +33,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: #50D8D7;
 }
 
 .post-list {
@@ -49,7 +49,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid #50d8d7;
 }
 
 textarea {
@@ -100,7 +100,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: #547AA5;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -109,7 +109,7 @@ main {
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: #50d8d7;
 }
 
 .delete-post-btn {
@@ -128,7 +128,7 @@ main {
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: #74F5165;
 }
 
 .edit-link {
@@ -142,7 +142,7 @@ main {
 }
 
 .upvote-btn:hover {
-  background-color: #1f9c13;
+  background-color: #547AA5;
 }
 
 .comment-form {
@@ -174,7 +174,7 @@ main {
 
 .flash-message {
   background-color: #ffb6c1;
-  color: red;
+  color: #50D8D7;
   text-align: center;
 }
 
