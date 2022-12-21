@@ -58,6 +58,7 @@ textarea {
 }
 
 form > div {
+  display:flex;
   margin-bottom: 2%;
 }
 
