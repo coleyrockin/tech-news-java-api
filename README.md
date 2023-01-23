@@ -4,17 +4,22 @@ Just Tech News: Tech news website where users can post, upvote, and comment on l
 
 ## Concept
 To learn and explore Java programming language, tools, and new IDE.
+* Spring Boot API, Spring Initializr
+* Spring Data JPA
+* MySQL
+* Thymeleaf
+* Deployed on Heroku
 
-## Link to heroku deplyment
-[Heroku link depolyed here](https://cc-java-api-21.herokuapp.com/)
+### Link to heroku deployment
+[Heroku link](https://cc-java-api-21.herokuapp.com/)
 
-## Screenshot
+### Screenshot
 
-![img](.)
+![img](src/main/resources/static/image/Justtechnewjava.png)
 
-## Author & Contact Info
+### Author & Contact Info
 Boyd Roberts
 
-[Coleyrockin Github](https://github.com/coleyrockin)
+[Coleyrockin GitHub](https://github.com/coleyrockin)
 
 [Coleyrockin@aol.com](mailto:coleyrockin@aol.com)
