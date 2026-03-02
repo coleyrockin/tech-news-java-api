@@ -36,20 +36,14 @@ public class TechNewsController {
     @PostMapping("/users/login")
     public String login(@ModelAttribute User user, Model model, HttpServletRequest request) throws Exception {
 
-        if ((user.getPassword().equals(null) || user.getPassword().isEmpty()) || (user.getEmail().equals(null) || user.getPassword().isEmpty())) {
+        if (isBlank(user.getEmail()) || isBlank(user.getPassword())) {
             model.addAttribute("notice", "Email address and password must be populated in order to login!");
             return "login";
         }
 
         User sessionUser = userRepository.findUserByEmail(user.getEmail());
 
-        try {
-            // If sessionUser is invalid, running .equals() will throw an error
-            if (sessionUser.equals(null)) {
-
-            }
-            // We will catch an error and notify client that email address is not recognized
-        } catch (NullPointerException e) {
+        if (sessionUser == null) {
             model.addAttribute("notice", "Email address is not recognized!");
             return "login";
         }
@@ -57,7 +51,7 @@ public class TechNewsController {
         // Validate Password
         String sessionUserPassword = sessionUser.getPassword();
         boolean isPasswordValid = BCrypt.checkpw(user.getPassword(), sessionUserPassword);
-        if(isPasswordValid == false) {
+        if(!isPasswordValid) {
             model.addAttribute("notice", "Password is not valid!");
             return "login";
         }
@@ -71,7 +65,7 @@ public class TechNewsController {
     @PostMapping("/users")
     public String signup(@ModelAttribute User user, Model model, HttpServletRequest request) throws Exception {
 
-        if ((user.getUsername().equals(null) || user.getUsername().isEmpty()) || (user.getPassword().equals(null) || user.getPassword().isEmpty()) || (user.getEmail().equals(null) || user.getPassword().isEmpty())) {
+        if (isBlank(user.getUsername()) || isBlank(user.getEmail()) || isBlank(user.getPassword())) {
             model.addAttribute("notice", "In order to signup username, email address and password must be populated!");
             return "login";
         }
@@ -87,11 +81,7 @@ public class TechNewsController {
 
         User sessionUser = userRepository.findUserByEmail(user.getEmail());
 
-        try {
-            if (sessionUser.equals(null)) {
-
-            }
-        } catch (NullPointerException e) {
+        if (sessionUser == null) {
             model.addAttribute("notice", "User is not recognized!");
             return "login";
         }
@@ -105,7 +95,7 @@ public class TechNewsController {
     @PostMapping("/posts")
     public String addPostDashboardPage(@ModelAttribute Post post, Model model, HttpServletRequest request) {
 
-        if ((post.getTitle().equals(null) || post.getTitle().isEmpty()) || (post.getPostUrl().equals(null) || post.getPostUrl().isEmpty())) {
+        if (isBlank(post.getTitle()) || isBlank(post.getPostUrl())) {
             return "redirect:/dashboardEmptyTitleAndLink";
         }
 
@@ -136,7 +126,7 @@ public class TechNewsController {
     @PostMapping("/comments")
     public String createCommentCommentsPage(@ModelAttribute Comment comment, Model model, HttpServletRequest request) {
 
-        if (comment.getCommentText().isEmpty() || comment.getCommentText().equals(null)) {
+        if (isBlank(comment.getCommentText())) {
             return "redirect:/singlePostEmptyComment/" + comment.getPostId();
         } else {
             if (request.getSession(false) != null) {
@@ -152,7 +142,7 @@ public class TechNewsController {
     @PostMapping("/comments/edit")
     public String createCommentEditPage(@ModelAttribute Comment comment, HttpServletRequest request) {
 
-        if (comment.getCommentText().equals("") || comment.getCommentText().equals(null)) {
+        if (isBlank(comment.getCommentText())) {
             return "redirect:/editPostEmptyComment/" + comment.getPostId();
         } else {
             if (request.getSession(false) != null) {
@@ -178,6 +168,10 @@ public class TechNewsController {
             returnPost = postRepository.getById(vote.getPostId());
             returnPost.setVoteCount(voteRepository.countVotesByPostId(vote.getPostId()));
         }
+    }
+
+    private boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
     }
 
 }
