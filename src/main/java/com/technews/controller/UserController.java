@@ -54,7 +54,7 @@ public class UserController {
     public User updateUser(@PathVariable int id, @RequestBody User user) {
         User tempUser = repository.getById(id);
 
-        if (!tempUser.equals(null)) {
+        if (tempUser != null) {
             user.setId(tempUser.getId());
             repository.save(user);
         }
@@ -68,4 +68,3 @@ public class UserController {
     }
 
 }
-
